@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ei! Esse é meu lugar — Cozy Logic Puzzle</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Um jogo de lógica acolhedor (Cozy Game) de arrastar e soltar. Resolva os enigmas espaciais e encontre o lugar perfeito para cada personagem fofo!">
+  <meta name="keywords" content="puzzle, cozy game, kawaii, logic riddle, einstein's riddle, sudoku, html5 game, vanilla js">
+  <meta name="author" content="Antigravity Team">
+  <meta name="theme-color" content="#f5efff">
+
+  <!-- Estilo Global -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main id="game-container" aria-label="Tabuleiro do Jogo">
+    
+    <!-- Cabeçalho / HUD Superior -->
+    <header>
+      <button id="btn-back" title="Voltar Fase" aria-label="Voltar fase anterior">
+        ◀ Voltar
+      </button>
+      <h1 id="level-title">Fase 01: O Ônibus Escolar</h1>
+      <div style="display: flex; gap: 8px;">
+        <button id="btn-sound" title="Desativar/Ativar Som" aria-label="Alternar som">🔊 Som</button>
+        <button id="btn-restart" title="Reiniciar Fase" aria-label="Reiniciar fase atual">
+          🔄 Reiniciar
+        </button>
+      </div>
+    </header>
+
+    <!-- Área de Jogo Principal -->
+    <section id="board-wrapper">
+      <p id="level-desc">Ajude a turma a se acomodar! Organize-os nos assentos vazios seguindo as regras lógicas.</p>
+      
+      <!-- O Tabuleiro Dinâmico -->
+      <div id="game-board" class="board" aria-live="polite">
+        <!-- Gerado via JavaScript de acordo com o cenário -->
+      </div>
+      
+      <!-- Canvas para efeito especial de Vitória -->
+      <canvas id="confetti-canvas"></canvas>
+    </section>
+
+    <!-- Seção de Personagens de Reserva -->
+    <section id="reserves-section" aria-label="Personagens na reserva">
+      <span class="reserves-title">Banco de Reservas:</span>
+      <div id="reserves-bank">
+        <!-- Personagens esperando para serem posicionados -->
+      </div>
+    </section>
+
+    <!-- Ficha de Perfil do Personagem selecionado (HUD Inferior) -->
+    <footer id="profile-card" aria-label="Ficha de Perfil do Personagem Selecionado">
+      <div id="profile-avatar-container" aria-hidden="true">
+        <!-- Renderização dinâmica do SVG do Personagem selecionado -->
+      </div>
+      <div id="profile-info">
+        <div id="profile-header">
+          <h2 id="profile-name">Gloop</h2>
+          <span id="profile-badge-category" class="badge categoria">Esportista</span>
+          <span id="profile-badge-gender" class="badge genero">Adulto</span>
+        </div>
+        <ul id="profile-rules" aria-label="Lista de desejos e restrições">
+          <!-- Lista de regras lógicas atualizadas com checkboxes ✔/✖ -->
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Modal de Vitória (Fase Concluída) -->
+    <div id="win-modal" role="dialog" aria-labelledby="win-title" aria-modal="true">
+      <div id="win-card">
+        <h2 id="win-title">✨ Tudo no seu lugar! ✨</h2>
+        <p>Você resolveu os desejos de todo mundo com perfeição!</p>
+        <button id="btn-next-level">Próxima Fase ➔</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Carregamento dos Scripts Lógicos e de Gameplay em Ordem -->
+  <script src="src/levels.js"></script>
+  <script src="src/audio.js"></script>
+  <script src="src/logic.js"></script>
+  <script src="src/game.js"></script>
+
+</body>
+</html>
