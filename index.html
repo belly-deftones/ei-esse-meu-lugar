@@ -18,16 +18,45 @@
 
   <main id="game-container" aria-label="Tabuleiro do Jogo">
     
-    <!-- Cabeçalho / HUD Superior -->
+    <!-- 1. TELA INICIAL / MENU PRINCIPAL -->
+    <div id="menu-screen" class="screen-overlay" aria-label="Menu Principal">
+      <div class="menu-card">
+        <div class="menu-brand">
+          <span class="brand-emoji">🍩</span>
+          <h1 class="menu-title">Ei! Esse é meu lugar</h1>
+          <span class="brand-emoji">⭐</span>
+        </div>
+        <p class="menu-subtitle">Um Cozy Puzzle de Raciocínio Lógico e Dedução</p>
+        
+        <div id="menu-highscore" class="menu-highscore-box">
+          Carregando pontuação...
+        </div>
+        
+        <div class="menu-buttons">
+          <button id="btn-play" class="btn-primary">Jogar ➔</button>
+          <button id="btn-settings-menu" class="btn-secondary">⚙️ Configurações</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cabeçalho / HUD Superior (Durante o Jogo) -->
     <header>
       <button id="btn-back" title="Voltar Fase" aria-label="Voltar fase anterior">
-        ◀ Voltar
+        ◀ Menu
       </button>
-      <h1 id="level-title">Fase 01: O Ônibus Escolar</h1>
-      <div style="display: flex; gap: 8px;">
-        <button id="btn-sound" title="Desativar/Ativar Som" aria-label="Alternar som">🔊 Som</button>
+      <div class="hud-center">
+        <h1 id="level-title">Fase 01: O Ônibus Escolar</h1>
+        <div class="hud-stats">
+          <div id="hud-score" class="hud-badge" aria-live="polite">✨ Pontos: 0</div>
+          <div id="hud-lives" class="hud-badge" aria-live="polite">
+            Vidas: <span id="lives-hearts" class="hearts-container">❤️❤️❤️</span>
+          </div>
+        </div>
+      </div>
+      <div class="hud-actions" style="display: flex; gap: 8px;">
+        <button id="btn-open-settings" title="Configurações de som" aria-label="Abrir configurações">⚙️</button>
         <button id="btn-restart" title="Reiniciar Fase" aria-label="Reiniciar fase atual">
-          🔄 Reiniciar
+          🔄
         </button>
       </div>
     </header>
@@ -70,12 +99,51 @@
       </div>
     </footer>
 
-    <!-- Modal de Vitória (Fase Concluída) -->
+    <!-- 2. MODAL DE CONFIGURAÇÕES -->
+    <div id="settings-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+      <div class="settings-card">
+        <h2 id="settings-title">Configurações de Áudio</h2>
+        
+        <div class="settings-group">
+          <label for="slider-sound">Efeitos Sonoros (SFX)</label>
+          <div class="slider-container">
+            <input type="range" id="slider-sound" min="0" max="100" value="80">
+            <span id="label-sound">80%</span>
+          </div>
+        </div>
+        
+        <div class="settings-group">
+          <label for="slider-music">Música de Fundo</label>
+          <div class="slider-container">
+            <input type="range" id="slider-music" min="0" max="100" value="50">
+            <span id="label-music">50%</span>
+          </div>
+        </div>
+        
+        <button id="btn-close-settings" class="btn-primary">Salvar e Fechar</button>
+      </div>
+    </div>
+
+    <!-- 3. MODAL DE VITÓRIA (Fase Concluída) -->
     <div id="win-modal" role="dialog" aria-labelledby="win-title" aria-modal="true">
       <div id="win-card">
         <h2 id="win-title">✨ Tudo no seu lugar! ✨</h2>
         <p>Você resolveu os desejos de todo mundo com perfeição!</p>
         <button id="btn-next-level">Próxima Fase ➔</button>
+      </div>
+    </div>
+
+    <!-- 4. TELA DE GAME OVER -->
+    <div id="gameover-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="gameover-title">
+      <div class="gameover-card">
+        <h2 id="gameover-title">Ops, você perdeu! 💔</h2>
+        <p>Suas vidas acabaram e a paciência da turma esgotou...</p>
+        
+        <div id="gameover-score" class="gameover-score-box">
+          Pontos acumulados nesta rodada: 0
+        </div>
+        
+        <button id="btn-retry" class="btn-primary">Jogar Novamente ➔</button>
       </div>
     </div>
 

@@ -164,6 +164,24 @@ window.LogicEngine = {
             break;
           }
 
+          case "evitar_fedido": {
+            // Verifica se há algum personagem adjacente que é fedido
+            let adjacentToSmelly = false;
+            for (const otherId in placedMap) {
+              if (otherId === char.id) continue;
+              const otherChar = level.personagens.find(c => c.id === otherId);
+              if (otherChar && otherChar.fedido) {
+                const otherSeat = placedMap[otherId];
+                if (otherSeat && this.getDistance(seat, otherSeat) === 1) {
+                  adjacentToSmelly = true;
+                  break;
+                }
+              }
+            }
+            satisfied = !adjacentToSmelly;
+            break;
+          }
+
           default:
             satisfied = true;
             break;
