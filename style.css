@@ -1,0 +1,699 @@
+/* 
+  Estilos Gerais de "Ei! Esse é meu lugar"
+  Direção de Arte: Cozy Game, Kawaii, Pastel, Premium Glassmorphism
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-color: #f7f6f0;
+  --font-title: 'Fredoka', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  
+  /* Cores de Feedback */
+  --color-success: #a0d8a7;
+  --color-success-dark: #6fb678;
+  --color-error: #f4b4b4;
+  --color-error-dark: #d96b6b;
+  --color-neutral: #e2e8f0;
+  --color-text-dark: #3a3b3c;
+  --color-text-muted: #6b7280;
+
+  /* Temas de Fase */
+  --onibus-corridor: #cbd5e1;
+  --cinema-screen: #e2e8f0;
+  --bistro-wood: #eddcc6;
+  --parque-green: #e6f4ea;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, #f5efff 0%, #eaf5ff 50%, #f6fff5 100%);
+  color: var(--color-text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+/* Container do Jogo */
+#game-container {
+  width: 100%;
+  max-width: 850px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), inset 0 0 20px rgba(255, 255, 255, 0.4);
+  border-radius: 32px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Header */
+header {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+header button {
+  font-family: var(--font-title);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border: 3px solid var(--color-text-dark);
+  background: #fff;
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 0 var(--color-text-dark);
+  transition: all 0.15s ease;
+}
+
+header button:hover {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--color-text-dark);
+}
+
+header button:active {
+  transform: translateY(4px);
+  box-shadow: 0 0px 0 var(--color-text-dark);
+}
+
+#level-title {
+  font-family: var(--font-title);
+  font-size: 26px;
+  color: var(--color-text-dark);
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
+}
+
+/* Main Board Area */
+#board-wrapper {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 380px;
+  position: relative;
+  justify-content: center;
+}
+
+#level-desc {
+  font-size: 15px;
+  text-align: center;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Tabuleiros Customizados por Fase */
+.board {
+  display: grid;
+  gap: 20px;
+  position: relative;
+  padding: 16px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.03);
+}
+
+/* Estilos de Tabuleiro por Cenário */
+.board.scenario-onibus {
+  background: #e2e8f0;
+  border: 4px solid #94a3b8;
+  padding: 24px;
+  row-gap: 20px;
+  column-gap: 40px; /* Cria o corredor visual no meio */
+}
+
+/* Aisle visual no ônibus */
+.board.scenario-onibus::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 12px);
+  width: 24px;
+  background: #cbd5e1;
+  border-left: 2px dashed #94a3b8;
+  border-right: 2px dashed #94a3b8;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.board.scenario-cinema {
+  background: #1e1b26;
+  border: 4px solid #3c1e30;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+/* Cinema Screen */
+.board.scenario-cinema::before {
+  content: "TELA DO CINEMA";
+  position: absolute;
+  top: -24px;
+  left: 10%;
+  right: 10%;
+  height: 8px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px #eaf5ff;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: 10px;
+  letter-spacing: 4px;
+  line-height: 8px;
+  opacity: 0.7;
+}
+
+.board.scenario-doceria {
+  background: #fdf2f8;
+  border: 4px solid #f472b6;
+  padding: 24px;
+  row-gap: 20px;
+  column-gap: 50px; /* Separação das mesas */
+}
+
+/* Balcões Físicos na Loja de Doces */
+.board.scenario-doceria::before,
+.board.scenario-doceria::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  width: calc(50% - 35px);
+  background: #fce7f3;
+  border: 3px solid #f472b6;
+  border-radius: 16px;
+  z-index: 1;
+  box-shadow: 0 8px 0 rgba(244, 114, 182, 0.2);
+}
+.board.scenario-doceria::before { left: 15px; }
+.board.scenario-doceria::after { right: 15px; }
+
+/* Doces decorativos flutuantes */
+.doceria-food {
+  position: absolute;
+  z-index: 2;
+  font-size: 24px;
+  background: #fff;
+  border: 2px solid #f472b6;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  pointer-events: none;
+  animation: float-food 3s ease-in-out infinite alternate;
+}
+@keyframes float-food {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+.board.scenario-parque {
+  background: #d4ebd5;
+  border: 4px solid #8fc292;
+  padding: 20px;
+}
+
+/* Elementos Físicos de Obstáculos no Parque */
+.grid-obstacle {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #fff;
+  border: 3px solid #8fc292;
+  box-shadow: 0 6px 0 rgba(143, 194, 146, 0.4);
+  z-index: 2;
+}
+.grid-obstacle .sprite {
+  font-size: 36px;
+  animation: idle-wiggle 4s ease-in-out infinite;
+}
+.grid-obstacle .label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+@keyframes idle-wiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(5deg) scale(1.05); }
+}
+
+/* Os Assentos */
+.seat {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  border: 3px dashed rgba(58, 59, 60, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.seat.empty:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: var(--color-text-dark);
+  transform: scale(1.05);
+}
+
+/* Customização dos Assentos por Tema */
+.azul-janela {
+  background: #e0f2fe;
+  border: 3px dashed #38bdf8;
+}
+.amarela-corredor {
+  background: #fef9c3;
+  border: 3px dashed #facc15;
+}
+.poltrona-vermelha {
+  background: #7f1d1d;
+  border: 3px dashed #f87171;
+}
+.banco-donuts {
+  background: #fff1f2;
+  border: 3px dashed #fda4af;
+}
+.banco-sorvete {
+  background: #f0f9ff;
+  border: 3px dashed #7dd3fc;
+}
+.toalha-picnic {
+  background: #fff;
+  border: 3px dashed #ef4444;
+  background-image: repeating-linear-gradient(45deg, #fee2e2 0px, #fee2e2 10px, transparent 10px, transparent 20px);
+}
+.toalha-flores {
+  background: #fdf2f8;
+  border: 3px dashed #ec4899;
+  background-image: radial-gradient(#fbcfe8 20%, transparent 20%), radial-gradient(#fbcfe8 20%, transparent 20%);
+  background-size: 15px 15px;
+  background-position: 0 0, 7.5px 7.5px;
+}
+
+/* Personagens (Os Bonecos Drag & Drop) */
+.character {
+  width: 72px;
+  height: 72px;
+  cursor: grab;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: none;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.character:active {
+  cursor: grabbing;
+}
+
+/* Estados do Drag */
+.character.dragging {
+  opacity: 0.8;
+  transform: scale(1.15) rotate(4deg);
+  z-index: 100;
+  filter: drop-shadow(0 15px 10px rgba(0, 0, 0, 0.15));
+}
+
+.character.selected {
+  outline: none;
+  filter: drop-shadow(0 0 10px #bfdbfe);
+  animation: character-pulse 1.5s infinite alternate;
+}
+
+@keyframes character-pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+/* Avatares SVG Estilizados */
+.avatar-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));
+  transition: all 0.3s ease;
+}
+
+.avatar-svg .eye {
+  animation: blink 4s infinite;
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+/* Blushing animado */
+.avatar-svg .blush {
+  animation: pulse-blush 2s infinite alternate;
+  transform-origin: center;
+}
+@keyframes pulse-blush {
+  0% { opacity: 0.6; }
+  100% { opacity: 0.9; }
+}
+
+/* HUD de Reservas */
+#reserves-section {
+  padding: 16px 24px;
+  background: rgba(255, 255, 255, 0.3);
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reserves-title {
+  font-family: var(--font-title);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#reserves-bank {
+  display: flex;
+  gap: 16px;
+  padding: 10px;
+  background: rgba(255,255,255,0.5);
+  border: 2px dashed rgba(58, 59, 60, 0.15);
+  border-radius: 20px;
+  min-height: 92px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Ficha de Perfil do Personagem (Bottom Sheet) */
+#profile-card {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.65);
+  border-top: 3px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  min-height: 180px;
+  transition: all 0.3s ease;
+}
+
+#profile-avatar-container {
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  border: 4px solid var(--color-text-dark);
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 0 rgba(0,0,0,0.05);
+  flex-shrink: 0;
+  position: relative;
+}
+
+#profile-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+#profile-name {
+  font-family: var(--font-title);
+  font-size: 24px;
+  color: var(--color-text-dark);
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 2px solid var(--color-text-dark);
+}
+
+.badge.categoria {
+  background: #e0f2fe;
+}
+.badge.genero {
+  background: #fef2f2;
+}
+
+/* Checkboxes Cozy */
+#profile-rules {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+#profile-rules li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 8px 16px;
+  border-radius: 12px;
+  border-left: 5px solid var(--color-neutral);
+  transition: all 0.25s ease;
+}
+
+#profile-rules li.satisfied {
+  border-left-color: var(--color-success-dark);
+  background: rgba(160, 216, 167, 0.25);
+  color: #2b5c32;
+}
+
+#profile-rules li.violated {
+  border-left-color: var(--color-error-dark);
+  background: rgba(244, 180, 180, 0.25);
+  color: #7c2d2d;
+}
+
+.checkbox-cozy {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--color-text-dark);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+li.satisfied .checkbox-cozy {
+  background: var(--color-success);
+  color: #fff;
+  border-color: var(--color-success-dark);
+  animation: checkbox-bounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+li.violated .checkbox-cozy {
+  background: var(--color-error);
+  color: #fff;
+  border-color: var(--color-error-dark);
+}
+
+@keyframes checkbox-bounce {
+  0% { transform: scale(0.6); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Modal de Vitória */
+#win-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+#win-card {
+  max-width: 420px;
+  background: #fff;
+  border: 4px solid var(--color-text-dark);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 12px 0 var(--color-text-dark);
+  animation: card-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#win-card h2 {
+  font-family: var(--font-title);
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+#win-card p {
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#win-card button {
+  font-family: var(--font-title);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px 30px;
+  border: 3px solid var(--color-text-dark);
+  background: var(--color-success);
+  color: #fff;
+  border-radius: 18px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 var(--color-text-dark);
+  transition: all 0.15s ease;
+}
+
+#win-card button:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 var(--color-text-dark);
+}
+
+#win-card button:active {
+  transform: translateY(6px);
+  box-shadow: 0 0px 0 var(--color-text-dark);
+}
+
+@keyframes card-pop {
+  0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Canvas de Confete */
+#confetti-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 600px) {
+  #game-container {
+    border-radius: 20px;
+    border-width: 2px;
+  }
+  
+  header {
+    padding: 16px;
+  }
+  
+  #level-title {
+    font-size: 20px;
+  }
+  
+  #board-wrapper {
+    padding: 16px;
+  }
+  
+  .seat {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+  }
+  
+  .character {
+    width: 58px;
+    height: 58px;
+  }
+
+  .grid-obstacle {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+  }
+  .grid-obstacle .sprite {
+    font-size: 26px;
+  }
+  .grid-obstacle .label {
+    font-size: 8px;
+  }
+  
+  #profile-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  #profile-avatar-container {
+    width: 80px;
+    height: 80px;
+  }
+  
+  #profile-info {
+    width: 100%;
+    align-items: center;
+  }
+  
+  #profile-rules {
+    width: 100%;
+  }
+
+  #profile-rules li {
+    font-size: 13px;
+  }
+}
