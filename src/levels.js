@@ -261,7 +261,7 @@ window.LEVELS = [
         genero: "Criança",
         avatar: "gatinho_branco",
         regras: [
-          { tipo: "longe_obstaculo", alvo: "colmeia", texto: "Tenho medo de abelhas! Não quero sentar perto da Colmeia." }
+          { tipo: "classe", alvo: "toalha-picnic", texto: "Prefiro as toalhas de piquenique clássicas!" }
         ]
       },
       {
@@ -291,7 +291,6 @@ window.LEVELS = [
         genero: "Bichinho",
         avatar: "gatinho_cinza",
         regras: [
-          { tipo: "longe_obstaculo", alvo: "arvore", texto: "Não quero sombra (muito úmido)." },
           { tipo: "longe_obstaculo", alvo: "colmeia", texto: "Não quero zumbido de abelhas por perto!" }
         ]
       },
@@ -312,7 +311,7 @@ window.LEVELS = [
         genero: "Adulto",
         avatar: "bebeto",
         regras: [
-          { tipo: "longe_de", alvo: "munch", texto: "Vou tirar um cochilo longe do Munch mastigador." }
+          { tipo: "nao_atras_de", alvo: "munch", texto: "Não quero sentar logo atrás do Munch mastigador." }
         ]
       },
       {
@@ -631,7 +630,7 @@ window.LEVELS = [
         avatar: "gloop",
         fedido: true,
         regras: [
-          { tipo: "linha", alvo: 0, texto: "Quero sentar na fileira de cima." }
+          { tipo: "coluna", alvo: 2, texto: "Quero ficar na coluna da direita para ver o pôr do sol." }
         ]
       },
       {
@@ -642,7 +641,7 @@ window.LEVELS = [
         avatar: "gatinho_branco",
         fedido: true,
         regras: [
-          { tipo: "linha", alvo: 2, texto: "Quero sentar na fileira de baixo." }
+          { tipo: "linha", alvo: 2, texto: "Quero me esconder lá no fundo." }
         ]
       },
       {
@@ -653,7 +652,7 @@ window.LEVELS = [
         avatar: "personagem_moranguinho",
         regras: [
           { tipo: "evitar_fedido", texto: "Quero toalhas cheirosas! Fique longe de Gloop e Fuzz." },
-          { tipo: "classe", alvo: "toalha-flores", texto: "Quero toalha florida!" }
+          { tipo: "linha", alvo: 1, texto: "Quero a fileira do meio para ver tudo!" }
         ]
       },
       {
@@ -664,7 +663,7 @@ window.LEVELS = [
         avatar: "zizi",
         regras: [
           { tipo: "evitar_fedido", texto: "Longe dos cheiros ruins!" },
-          { tipo: "perto_obstaculo", alvo: "arvore", texto: "Gostaria de ler perto da árvore." }
+          { tipo: "linha", alvo: 0, texto: "Quero a fileira da frente para ver a paisagem." }
         ]
       }
     ]
@@ -1623,7 +1622,7 @@ window.LEVELS = [
         avatar: "zizi",
         regras: [
           { tipo: "evitar_fedido", texto: "Longe dos cheiros ruins!" },
-          { tipo: "linha", alvo: 0, texto: "Fileira de cima, por favor." }
+          { tipo: "coluna", alvo: 1, texto: "Quero ficar na segunda coluna." }
         ]
       },
       {
@@ -1645,7 +1644,7 @@ window.LEVELS = [
         avatar: "bebeto",
         regras: [
           { tipo: "longe_de", alvo: "gloop", texto: "Quero ficar o mais longe possível do Gloop." },
-          { tipo: "classe", alvo: "toalha-azul", texto: "A toalha azul é mais macia." }
+          { tipo: "classe", alvo: "toalha-amarela", texto: "A toalha amarela é mais quentinha." }
         ]
       },
       {
