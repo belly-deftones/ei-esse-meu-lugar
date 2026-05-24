@@ -219,7 +219,7 @@ class Game {
   }
 
   // Calcula pontos com base na diferença antes/depois de um posicionamento
-  _applyScoreDelta(prevSnap) {
+  _applyScoreDelta(prevSnap, movedCharId = null) {
     if (!this.lastValidation) return;
     const level = this.getCurrentLevel();
     let pointsDelta = 0;
@@ -228,6 +228,7 @@ class Game {
     level.personagens.forEach(char => {
       const wasOk = prevSnap[char.id] === true;
       const isOk  = this.lastValidation.characterStates[char.id]?.allSatisfied === true;
+      const isPlaced = this.lastValidation.characterStates[char.id]?.placed === true;
 
       const baseGain  = (char.id === this.illustriousCharId) ? 1000 : 100;
       const baseLoss  = (char.id === this.illustriousCharId) ? 500  : 50;
@@ -240,6 +241,10 @@ class Game {
         }
       } else if (wasOk && !isOk) {
         // Passou de satisfeito → insatisfeito: perde pontos!
+        pointsDelta -= baseLoss;
+        shouldPlayError = true;
+      } else if (char.id === movedCharId && !wasOk && !isOk && isPlaced) {
+        // Personagem acabou de ser colocado, mas está em um lugar errado!
         pointsDelta -= baseLoss;
         shouldPlayError = true;
       }
@@ -713,7 +718,7 @@ class Game {
     this.updateLogic();
 
     // Calcular e aplicar pontos
-    this._applyScoreDelta(prevSnap);
+    this._applyScoreDelta(prevSnap, charId);
 
     // Atualizar ficha do personagem
     const char = level.personagens.find(c => c.id === charId);
