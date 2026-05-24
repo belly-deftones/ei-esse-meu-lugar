@@ -404,7 +404,7 @@ class Game {
     if (char.fedido) charEl.classList.add("smelly-effect");
     if (char.id === this.illustriousCharId) charEl.classList.add("illustrious-effect");
 
-    charEl.innerHTML = this.getCharacterSVG(char.avatar, mood);
+    charEl.innerHTML = this.getCharacterSVG(char.avatar, mood, char.fedido);
 
     charEl.addEventListener("pointerdown", (e) => this.handlePointerDown(e, charEl, char.id));
     charEl.addEventListener("click", (e) => {
@@ -419,7 +419,16 @@ class Game {
   }
 
   // SVG Kawaii dos personagens com variações de humor
-  getCharacterSVG(avatar, mood) {
+  getCharacterSVG(avatar, mood, isFedido = false) {
+    if (["gatinho_branco", "gatinho_cinza", "personagem_moranguinho"].includes(avatar)) {
+      let state = "neutro";
+      if (isFedido && avatar.startsWith("gatinho")) state = "fedido";
+      else if (mood === "happy") state = avatar === "personagem_moranguinho" ? "feliz" : "neutro";
+      else if (mood === "sad") state = "triste";
+      
+      return `<img src="assets/images/${avatar}_${state}.png" alt="${avatar}" style="width:100%;height:100%;object-fit:contain;pointer-events:none;">`;
+    }
+
     let bodyColor  = "#fcd34d";
     let blushColor = "#fca5a5";
     let eyeColor   = "#3a3b3c";
@@ -527,7 +536,7 @@ class Game {
       ? (this.lastValidation?.characterStates[char.id]?.mood || "happy")
       : "neutral";
 
-    avatarContainer.innerHTML = this.getCharacterSVG(char.avatar, currentMood);
+    avatarContainer.innerHTML = this.getCharacterSVG(char.avatar, currentMood, char.fedido);
 
     // Nome com tags especiais
     let displayName = char.nome;
@@ -745,7 +754,7 @@ class Game {
       const charEl = document.getElementById(`char-${char.id}`);
       if (!charEl) return;
       const mood = validation.characterStates[char.id]?.mood || "neutral";
-      charEl.innerHTML = this.getCharacterSVG(char.avatar, mood);
+      charEl.innerHTML = this.getCharacterSVG(char.avatar, mood, char.fedido);
     });
 
     // Atualizar ficha do personagem ativo

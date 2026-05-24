@@ -38,7 +38,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         regras: [
           { tipo: "classe_negativa", alvo: "azul-janela", texto: "Não gosto de azul. Prefiro as cadeiras amarelas." },
           { tipo: "perto_de", alvo: "pipoca", texto: "Quero ficar pertinho do Pipoca." }
@@ -49,7 +49,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "linha", alvo: 0, texto: "Quero sentar na fileira da frente!" }
         ]
@@ -93,7 +93,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "linha", alvo: 0, texto: "Quero ver a tela de perto (fileira da frente)!" }
         ]
@@ -103,7 +103,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         regras: [
           { tipo: "perto_de", alvo: "pipoca", texto: "Quero sentar ao lado ou de frente para o Pipoca." }
         ]
@@ -202,7 +202,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "mesma_mesa_que", alvo: 1, texto: "Amo donuts! Quero a mesa do donut." }
         ]
@@ -212,7 +212,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         regras: [
           { tipo: "longe_de", alvo: "munch", texto: "Não quero sentar ao lado do Munch." }
         ]
@@ -259,7 +259,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         regras: [
           { tipo: "longe_obstaculo", alvo: "colmeia", texto: "Tenho medo de abelhas! Não quero sentar perto da Colmeia." }
         ]
@@ -289,7 +289,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "longe_obstaculo", alvo: "arvore", texto: "Não quero sombra (muito úmido)." },
           { tipo: "longe_obstaculo", alvo: "colmeia", texto: "Não quero zumbido de abelhas por perto!" }
@@ -320,7 +320,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "classe", alvo: "toalha-flores", texto: "Quero sentar em uma das toalhas com flores!" }
         ]
@@ -354,7 +354,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         fedido: true, // FEDIDO!
         regras: [
           { tipo: "classe", alvo: "toalha-azul", texto: "Quero deitar na toalha listrada azul." }
@@ -365,7 +365,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "evitar_fedido", texto: "Tenho o faro sensível! Não sento ao lado de ninguém fedido." },
           { tipo: "classe", alvo: "toalha-azul", texto: "Prefiro toalha azul." }
@@ -452,7 +452,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "perto_de", alvo: "bebeto", texto: "Quero sentar do lado ou em frente ao Bebeto." }
         ]
@@ -497,7 +497,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "evitar_fedido", texto: "Minhas flores perfumadas não combinam com cebola fedida!" },
           { tipo: "ponta", texto: "Quero sentar em uma das pontas." }
@@ -579,7 +579,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "evitar_fedido", texto: "Detesto cheiro de mofo! Longe do Bebeto." },
           { tipo: "mesma_mesa_que", alvo: 1, texto: "Quero sentar na mesa do donut." }
@@ -590,7 +590,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "mesmo_grupo_que", alvo: "flora", texto: "Quero sentar na mesma mesa que a Flora." },
           { tipo: "evitar_fedido", texto: "Ai, que cheiro de mofo insuportável!" }
@@ -639,7 +639,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         fedido: true,
         regras: [
           { tipo: "linha", alvo: 2, texto: "Quero sentar na fileira de baixo." }
@@ -650,7 +650,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "evitar_fedido", texto: "Quero toalhas cheirosas! Fique longe de Gloop e Fuzz." },
           { tipo: "classe", alvo: "toalha-flores", texto: "Quero toalha florida!" }
@@ -696,7 +696,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "classe", alvo: "toalha-amarela", texto: "Quero sentar na toalha amarela." }
         ]
@@ -726,7 +726,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "classe", alvo: "toalha-azul", texto: "Quero a toalha azul." }
         ]
@@ -792,7 +792,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         regras: [
           { tipo: "classe", alvo: "amarela-corredor", texto: "Prefiro corredor amarelo." }
         ]
@@ -802,7 +802,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "perto_de", alvo: "fuzz", texto: "Quero ficar bem perto do Fuzz." }
         ]
@@ -836,7 +836,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "meio", texto: "Quero poltronas do meio." }
         ]
@@ -846,7 +846,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "ponta", texto: "Quero sentar na ponta esquerda ou direita." },
           { tipo: "linha", alvo: 1, texto: "Quero sentar na fileira de trás." }
@@ -877,7 +877,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         regras: [
           { tipo: "longe_de", alvo: "gloop", texto: "Quero distância do energético Gloop." }
         ]
@@ -936,7 +936,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "mesma_mesa_que", alvo: 1, texto: "Prefiro os donuts cheirosos." }
         ]
@@ -946,7 +946,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "mesmo_grupo_que", alvo: "flora", texto: "Sentar na mesa da Flora." }
         ]
@@ -1004,7 +1004,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         regras: [
           { tipo: "evitar_fedido", texto: "Detesto mãos grudentas! Longe do Munch." },
           { tipo: "longe_obstaculo", alvo: "colmeia", texto: "Longe das abelhas!" }
@@ -1015,7 +1015,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "evitar_fedido", texto: "Longe do mel fedido do Munch!" }
         ]
@@ -1025,7 +1025,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "classe", alvo: "toalha-flores", texto: "Quero deitar nas toalhas floridas." }
         ]
@@ -1059,7 +1059,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         fedido: true,
         regras: [
           { tipo: "classe", alvo: "toalha-azul", texto: "Quero sentar na toalha azul." }
@@ -1092,7 +1092,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "evitar_fedido", texto: "Não suporto cheiro de química!" }
         ]
@@ -1127,7 +1127,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "linha", alvo: 0, texto: "Quero assistir na primeira fileira." }
         ]
@@ -1218,7 +1218,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "evitar_fedido", texto: "Socorro! Que hálito horrível de durian!" },
           { tipo: "mesma_mesa_que", alvo: 1, texto: "Ficarei na mesa do donut." }
@@ -1278,7 +1278,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         fedido: true,
         regras: [
           { tipo: "linha", alvo: 2, texto: "Quero a fileira de baixo." }
@@ -1289,7 +1289,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "evitar_fedido", texto: "Ficarei longe da lama!" },
           { tipo: "longe_obstaculo", alvo: "colmeia", texto: "Medo de abelhas." }
@@ -1300,7 +1300,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "evitar_fedido", texto: "Cheiro de lama não entra nas minhas flores." },
           { tipo: "classe", alvo: "toalha-flores", texto: "Quero toalha florida." }
@@ -1346,7 +1346,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         fedido: true,
         regras: [
           { tipo: "classe", alvo: "toalha-azul", texto: "Quero a toalha azul." }
@@ -1357,7 +1357,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "evitar_fedido", texto: "Cheiro forte de peixe! Fique longe." }
         ]
@@ -1440,7 +1440,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "evitar_fedido", texto: "Longe dos odores de pipoca estragada e sono!" },
           { tipo: "linha", alvo: 1, texto: "Prefiro a fileira do meio também." },
@@ -1463,7 +1463,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         regras: [
           { tipo: "perto_de", alvo: "pipoca", texto: "Quero sentar ao lado do Pipoca." }
         ]
@@ -1473,7 +1473,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "evitar_fedido", texto: "Nada de cheiros ruins no meu focinho fofo!" },
           { tipo: "linha", alvo: 2, texto: "Quero a fileira de trás." }
@@ -1530,7 +1530,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "evitar_fedido", texto: "Longe dos cheiros ruins!" },
           { tipo: "classe", alvo: "toalha-amarela", texto: "Gosto mais da toalha amarela." }
@@ -1563,7 +1563,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "linha", alvo: 0, texto: "Quero a fileira da frente para ver as ondas." },
           { tipo: "perto_de", alvo: "munch", texto: "Munch sempre derruba comida, quero ficar perto dele!" }
@@ -1609,7 +1609,7 @@ window.LEVELS = [
         nome: "Fuzz",
         categoria: "Tímido",
         genero: "Criança",
-        avatar: "fuzz",
+        avatar: "gatinho_branco",
         fedido: true,
         regras: [
           { tipo: "coluna", alvo: 3, texto: "Vou ficar na última coluna, escondidinho." }
@@ -1631,7 +1631,7 @@ window.LEVELS = [
         nome: "Flora",
         categoria: "Jardinheira",
         genero: "Criança",
-        avatar: "flora",
+        avatar: "personagem_moranguinho",
         regras: [
           { tipo: "evitar_fedido", texto: "Também não gosto de odores desagradáveis." },
           { tipo: "linha", alvo: 1, texto: "Fileira de baixo para mim." }
@@ -1653,7 +1653,7 @@ window.LEVELS = [
         nome: "Pipoca",
         categoria: "Pet",
         genero: "Bichinho",
-        avatar: "pipoca",
+        avatar: "gatinho_cinza",
         regras: [
           { tipo: "perto_de", alvo: "zizi", texto: "Quero sentar ao lado da Zizi." },
           { tipo: "classe", alvo: "toalha-amarela", texto: "Prefiro toalha amarela." }
