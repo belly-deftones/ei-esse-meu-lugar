@@ -14,12 +14,12 @@ window.LEVELS = [
       corridorAfterCol: 0
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "azul-janela", label: "Janela Azul (Frente)" },
-      { id: "s01", row: 0, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Frente)" },
-      { id: "s10", row: 1, col: 0, classe: "azul-janela", label: "Janela Azul (Meio)" },
-      { id: "s11", row: 1, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Meio)" },
-      { id: "s20", row: 2, col: 0, classe: "azul-janela", label: "Janela Azul (Fundo)" },
-      { id: "s21", row: 2, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Fundo)" }
+      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "Janela Azul (Frente)" },
+      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Frente)" },
+      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "Janela Azul (Meio)" },
+      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Meio)" },
+      { id: "s20", row: 2, col: 0, classe: "assento-transparente", label: "Janela Azul (Fundo)" },
+      { id: "s21", row: 2, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Fundo)" }
     ],
     personagens: [
       {
@@ -68,14 +68,14 @@ window.LEVELS = [
       cols: 4
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "poltrona-vermelha", label: "Frente (Ponta Esquerda)" },
-      { id: "s01", row: 0, col: 1, classe: "poltrona-vermelha", label: "Frente (Meio Esquerdo)" },
-      { id: "s02", row: 0, col: 2, classe: "poltrona-vermelha", label: "Frente (Meio Direito)" },
-      { id: "s03", row: 0, col: 3, classe: "poltrona-vermelha", label: "Frente (Ponta Direita)" },
-      { id: "s10", row: 1, col: 0, classe: "poltrona-vermelha", label: "Fundo (Ponta Esquerda)" },
-      { id: "s11", row: 1, col: 1, classe: "poltrona-vermelha", label: "Fundo (Meio Esquerdo)" },
-      { id: "s12", row: 1, col: 2, classe: "poltrona-vermelha", label: "Fundo (Meio Direito)" },
-      { id: "s13", row: 1, col: 3, classe: "poltrona-vermelha", label: "Fundo (Ponta Direita)" }
+      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "Frente (Ponta Esquerda)" },
+      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "Frente (Meio Esquerdo)" },
+      { id: "s02", row: 0, col: 2, classe: "assento-transparente", label: "Frente (Meio Direito)" },
+      { id: "s03", row: 0, col: 3, classe: "assento-transparente", label: "Frente (Ponta Direita)" },
+      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "Fundo (Ponta Esquerda)" },
+      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "Fundo (Meio Esquerdo)" },
+      { id: "s12", row: 1, col: 2, classe: "assento-transparente", label: "Fundo (Meio Direito)" },
+      { id: "s13", row: 1, col: 3, classe: "assento-transparente", label: "Fundo (Ponta Direita)" }
     ],
     personagens: [
       {
@@ -406,12 +406,12 @@ window.LEVELS = [
       corridorAfterCol: 0
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "azul-janela", label: "Janela Azul (Sup)" },
-      { id: "s01", row: 0, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Sup)" },
-      { id: "s10", row: 1, col: 0, classe: "azul-janela", label: "Janela Azul (Meio)" },
-      { id: "s11", row: 1, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Meio)" },
-      { id: "s20", row: 2, col: 0, classe: "azul-janela", label: "Janela Azul (Inf)" },
-      { id: "s21", row: 2, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Inf)" }
+      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "Janela Azul (Sup)" },
+      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Sup)" },
+      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "Janela Azul (Meio)" },
+      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Meio)" },
+      { id: "s20", row: 2, col: 0, classe: "assento-transparente", label: "Janela Azul (Inf)" },
+      { id: "s21", row: 2, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Inf)" }
     ],
     personagens: [
       {
@@ -470,14 +470,14 @@ window.LEVELS = [
       cols: 4
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "poltrona-vermelha", label: "C1" },
-      { id: "s01", row: 0, col: 1, classe: "poltrona-vermelha", label: "C2" },
-      { id: "s02", row: 0, col: 2, classe: "poltrona-vermelha", label: "C3" },
-      { id: "s03", row: 0, col: 3, classe: "poltrona-vermelha", label: "C4" },
-      { id: "s10", row: 1, col: 0, classe: "poltrona-vermelha", label: "C5" },
-      { id: "s11", row: 1, col: 1, classe: "poltrona-vermelha", label: "C6" },
-      { id: "s12", row: 1, col: 2, classe: "poltrona-vermelha", label: "C7" },
-      { id: "s13", row: 1, col: 3, classe: "poltrona-vermelha", label: "C8" }
+      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "C1" },
+      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "C2" },
+      { id: "s02", row: 0, col: 2, classe: "assento-transparente", label: "C3" },
+      { id: "s03", row: 0, col: 3, classe: "assento-transparente", label: "C4" },
+      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "C5" },
+      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "C6" },
+      { id: "s12", row: 1, col: 2, classe: "assento-transparente", label: "C7" },
+      { id: "s13", row: 1, col: 3, classe: "assento-transparente", label: "C8" }
     ],
     personagens: [
       {
@@ -745,14 +745,14 @@ window.LEVELS = [
       corridorAfterCol: 0
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "azul-janela", label: "F1-E" },
-      { id: "s01", row: 0, col: 1, classe: "amarela-corredor", label: "F1-D" },
-      { id: "s10", row: 1, col: 0, classe: "azul-janela", label: "F2-E" },
-      { id: "s11", row: 1, col: 1, classe: "amarela-corredor", label: "F2-D" },
-      { id: "s20", row: 2, col: 0, classe: "azul-janela", label: "F3-E" },
-      { id: "s21", row: 2, col: 1, classe: "amarela-corredor", label: "F3-D" },
-      { id: "s30", row: 3, col: 0, classe: "azul-janela", label: "F4-E" },
-      { id: "s31", row: 3, col: 1, classe: "amarela-corredor", label: "F4-D" }
+      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "F1-E" },
+      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "F1-D" },
+      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "F2-E" },
+      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "F2-D" },
+      { id: "s20", row: 2, col: 0, classe: "assento-transparente", label: "F3-E" },
+      { id: "s21", row: 2, col: 1, classe: "assento-transparente", label: "F3-D" },
+      { id: "s30", row: 3, col: 0, classe: "assento-transparente", label: "F4-E" },
+      { id: "s31", row: 3, col: 1, classe: "assento-transparente", label: "F4-D" }
     ],
     personagens: [
       {
@@ -820,14 +820,14 @@ window.LEVELS = [
       cols: 4
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "poltrona-vermelha", label: "Poltrona 1" },
-      { id: "s01", row: 0, col: 1, classe: "poltrona-vermelha", label: "Poltrona 2" },
-      { id: "s02", row: 0, col: 2, classe: "poltrona-vermelha", label: "Poltrona 3" },
-      { id: "s03", row: 0, col: 3, classe: "poltrona-vermelha", label: "Poltrona 4" },
-      { id: "s10", row: 1, col: 0, classe: "poltrona-vermelha", label: "Poltrona 5" },
-      { id: "s11", row: 1, col: 1, classe: "poltrona-vermelha", label: "Poltrona 6" },
-      { id: "s12", row: 1, col: 2, classe: "poltrona-vermelha", label: "Poltrona 7" },
-      { id: "s13", row: 1, col: 3, classe: "poltrona-vermelha", label: "Poltrona 8" }
+      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "Poltrona 1" },
+      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "Poltrona 2" },
+      { id: "s02", row: 0, col: 2, classe: "assento-transparente", label: "Poltrona 3" },
+      { id: "s03", row: 0, col: 3, classe: "assento-transparente", label: "Poltrona 4" },
+      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "Poltrona 5" },
+      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "Poltrona 6" },
+      { id: "s12", row: 1, col: 2, classe: "assento-transparente", label: "Poltrona 7" },
+      { id: "s13", row: 1, col: 3, classe: "assento-transparente", label: "Poltrona 8" }
     ],
     personagens: [
       {
@@ -1110,15 +1110,15 @@ window.LEVELS = [
       cols: 3
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "poltrona-vermelha", label: "P1" },
-      { id: "s01", row: 0, col: 1, classe: "poltrona-vermelha", label: "P2" },
-      { id: "s02", row: 0, col: 2, classe: "poltrona-vermelha", label: "P3" },
-      { id: "s10", row: 1, col: 0, classe: "poltrona-vermelha", label: "P4" },
-      { id: "s11", row: 1, col: 1, classe: "poltrona-vermelha", label: "P5" },
-      { id: "s12", row: 1, col: 2, classe: "poltrona-vermelha", label: "P6" },
-      { id: "s20", row: 2, col: 0, classe: "poltrona-vermelha", label: "P7" },
-      { id: "s21", row: 2, col: 1, classe: "poltrona-vermelha", label: "P8" },
-      { id: "s22", row: 2, col: 2, classe: "poltrona-vermelha", label: "P9" }
+      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "P1" },
+      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "P2" },
+      { id: "s02", row: 0, col: 2, classe: "assento-transparente", label: "P3" },
+      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "P4" },
+      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "P5" },
+      { id: "s12", row: 1, col: 2, classe: "assento-transparente", label: "P6" },
+      { id: "s20", row: 2, col: 0, classe: "assento-transparente", label: "P7" },
+      { id: "s21", row: 2, col: 1, classe: "assento-transparente", label: "P8" },
+      { id: "s22", row: 2, col: 2, classe: "assento-transparente", label: "P9" }
     ],
     personagens: [
       {
@@ -1386,18 +1386,18 @@ window.LEVELS = [
       cols: 4
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "poltrona-vermelha", label: "F1" },
-      { id: "s01", row: 0, col: 1, classe: "poltrona-vermelha", label: "F2" },
-      { id: "s02", row: 0, col: 2, classe: "poltrona-vermelha", label: "F3" },
-      { id: "s03", row: 0, col: 3, classe: "poltrona-vermelha", label: "F4" },
-      { id: "s10", row: 1, col: 0, classe: "poltrona-vermelha", label: "M1" },
-      { id: "s11", row: 1, col: 1, classe: "poltrona-vermelha", label: "M2" },
-      { id: "s12", row: 1, col: 2, classe: "poltrona-vermelha", label: "M3" },
-      { id: "s13", row: 1, col: 3, classe: "poltrona-vermelha", label: "M4" },
-      { id: "s20", row: 2, col: 0, classe: "poltrona-vermelha", label: "T1" },
-      { id: "s21", row: 2, col: 1, classe: "poltrona-vermelha", label: "T2" },
-      { id: "s22", row: 2, col: 2, classe: "poltrona-vermelha", label: "T3" },
-      { id: "s23", row: 2, col: 3, classe: "poltrona-vermelha", label: "T4" }
+      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "F1" },
+      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "F2" },
+      { id: "s02", row: 0, col: 2, classe: "assento-transparente", label: "F3" },
+      { id: "s03", row: 0, col: 3, classe: "assento-transparente", label: "F4" },
+      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "M1" },
+      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "M2" },
+      { id: "s12", row: 1, col: 2, classe: "assento-transparente", label: "M3" },
+      { id: "s13", row: 1, col: 3, classe: "assento-transparente", label: "M4" },
+      { id: "s20", row: 2, col: 0, classe: "assento-transparente", label: "T1" },
+      { id: "s21", row: 2, col: 1, classe: "assento-transparente", label: "T2" },
+      { id: "s22", row: 2, col: 2, classe: "assento-transparente", label: "T3" },
+      { id: "s23", row: 2, col: 3, classe: "assento-transparente", label: "T4" }
     ],
     personagens: [
       {
