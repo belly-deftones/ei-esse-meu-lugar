@@ -74,8 +74,65 @@ class Game {
     // --- Game Over ---
     document.getElementById("btn-retry").addEventListener("click", () => this.retryGame());
 
+    // --- Tutorial ---
+    this._initTutorial();
+
     // Mostrar tela de menu inicial
     this.showScreen("menu");
+  }
+
+  // =========================================================
+  //  TUTORIAL
+  // =========================================================
+  _initTutorial() {
+    this.tutorialCurrentSlide = 0;
+    this.tutorialSlides = document.querySelectorAll(".tutorial-slide");
+    this.tutorialDots = document.querySelectorAll(".tutorial-dot");
+    
+    document.getElementById("btn-tutorial-prev").addEventListener("click", () => this._navTutorial(-1));
+    document.getElementById("btn-tutorial-next").addEventListener("click", () => this._navTutorial(1));
+    document.getElementById("btn-tutorial-close").addEventListener("click", () => {
+      document.getElementById("tutorial-modal").style.display = "none";
+      localStorage.setItem("eiEsseMeuLugar_tutorialSeen", "true");
+    });
+  }
+
+  _showTutorial() {
+    document.getElementById("tutorial-modal").style.display = "flex";
+    this.tutorialCurrentSlide = 0;
+    this._updateTutorialUI();
+  }
+
+  _navTutorial(dir) {
+    this.tutorialCurrentSlide += dir;
+    if (this.tutorialCurrentSlide < 0) this.tutorialCurrentSlide = 0;
+    if (this.tutorialCurrentSlide >= this.tutorialSlides.length) this.tutorialCurrentSlide = this.tutorialSlides.length - 1;
+    this._updateTutorialUI();
+  }
+
+  _updateTutorialUI() {
+    this.tutorialSlides.forEach((slide, idx) => {
+      if (idx === this.tutorialCurrentSlide) slide.classList.add("active");
+      else slide.classList.remove("active");
+    });
+    this.tutorialDots.forEach((dot, idx) => {
+      if (idx === this.tutorialCurrentSlide) dot.classList.add("active");
+      else dot.classList.remove("active");
+    });
+
+    const btnPrev = document.getElementById("btn-tutorial-prev");
+    const btnNext = document.getElementById("btn-tutorial-next");
+    const btnClose = document.getElementById("btn-tutorial-close");
+
+    btnPrev.disabled = (this.tutorialCurrentSlide === 0);
+    
+    if (this.tutorialCurrentSlide === this.tutorialSlides.length - 1) {
+      btnNext.style.display = "none";
+      btnClose.style.display = "block";
+    } else {
+      btnNext.style.display = "block";
+      btnClose.style.display = "none";
+    }
   }
 
   // =========================================================
@@ -127,6 +184,10 @@ class Game {
     this.showScreen("game");
     this._renderHUD();
     this.loadLevel(0);
+
+    if (!localStorage.getItem("eiEsseMeuLugar_tutorialSeen")) {
+      this._showTutorial();
+    }
   }
 
   retryGame() {
@@ -213,7 +274,10 @@ class Game {
     const level = this.getCurrentLevel();
     level.personagens.forEach(char => {
       const state = this.lastValidation.characterStates[char.id];
-      snap[char.id] = state ? state.allSatisfied : false;
+      snap[char.id] = {
+        satisfied: state ? state.allSatisfied : false,
+        placed: state ? state.placed : false
+      };
     });
     return snap;
   }
@@ -226,7 +290,9 @@ class Game {
     let shouldPlayError = false;
 
     level.personagens.forEach(char => {
-      const wasOk = prevSnap[char.id] === true;
+      const prev = prevSnap[char.id] || { satisfied: false, placed: false };
+      const wasOk = prev.satisfied;
+      const wasPlaced = prev.placed;
       const isOk  = this.lastValidation.characterStates[char.id]?.allSatisfied === true;
       const isPlaced = this.lastValidation.characterStates[char.id]?.placed === true;
 
@@ -243,11 +309,13 @@ class Game {
         // Passou de satisfeito → insatisfeito: perde pontos!
         pointsDelta -= baseLoss;
         shouldPlayError = true;
-      } else if (char.id === movedCharId && !wasOk && !isOk && isPlaced) {
-        // Personagem acabou de ser colocado, mas está em um lugar errado!
+      } else if (char.id === movedCharId && !isOk && isPlaced && !wasPlaced) {
+        // Personagem acabou de ser colocado pela primeira vez, mas está em um lugar errado!
         pointsDelta -= baseLoss;
         shouldPlayError = true;
       }
+      // NOTA: Se estava errado (wasPlaced=true, wasOk=false) e continua errado (isPlaced=true, isOk=false),
+      // nenhuma penalidade extra é aplicada!
     });
 
     if (pointsDelta !== 0) {
@@ -346,10 +414,26 @@ class Game {
 
     // Elementos decorativos da doceria
     if (level.cenario === "doceria" && level.elementos) {
+      // Adicionar mesa real no meio
+      const mesaEl = document.createElement("div");
+      mesaEl.className = "doceria-mesa";
+      mesaEl.innerHTML = `<img src="assets/images/mesa_cenario.png" style="width: 100%; height: 100%; object-fit: contain;">`;
+      mesaEl.style.position = "absolute";
+      mesaEl.style.left = "calc(50% - 60px)";
+      mesaEl.style.top = "60px";
+      mesaEl.style.width = "120px";
+      mesaEl.style.height = "100px";
+      mesaEl.style.zIndex = "1";
+      mesaEl.style.pointerEvents = "none";
+      board.appendChild(mesaEl);
+
       level.elementos.forEach(el => {
         const foodEl = document.createElement("div");
         foodEl.className = "doceria-food";
-        foodEl.innerText = el.type === "donut" ? "🍩" : "🍦";
+        foodEl.style.background = "transparent";
+        foodEl.style.border = "none";
+        foodEl.style.boxShadow = "none";
+        foodEl.innerHTML = el.type === "donut" ? `<img src="assets/images/donut.png" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 4px 6px rgba(0,0,0,0.15));">` : `<img src="assets/images/sorvete.png" style="width:100%; height:100%; object-fit:contain; filter:drop-shadow(0 4px 6px rgba(0,0,0,0.15));">`;
         const colOffset = el.col * 100;
         foodEl.style.left = `calc(${colOffset}px - 21px)`;
         foodEl.style.top  = "38px";
@@ -364,7 +448,13 @@ class Game {
         obsEl.className = "grid-obstacle";
         obsEl.style.gridRowStart    = obs.row + 1;
         obsEl.style.gridColumnStart = obs.col + 1;
-        obsEl.innerHTML = `<span class="sprite">${obs.sprite}</span><span class="label">${obs.label}</span>`;
+        let spriteHtml = `<span class="sprite">${obs.sprite}</span>`;
+        if (obs.sprite === "🌳") {
+          spriteHtml = `<img src="assets/images/arvore.png" style="width:80%; height:80%; object-fit:contain; animation: idle-wiggle 4s ease-in-out infinite;">`;
+        } else if (obs.sprite === "🍯" || obs.sprite === "🐝") {
+          spriteHtml = `<img src="assets/images/colmeia.png" style="width:80%; height:80%; object-fit:contain; animation: idle-wiggle 4s ease-in-out infinite;">`;
+        }
+        obsEl.innerHTML = `${spriteHtml}<span class="label">${obs.label}</span>`;
         board.appendChild(obsEl);
       });
     }

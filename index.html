@@ -102,7 +102,73 @@
       </div>
     </footer>
 
-    <!-- 2. MODAL DE CONFIGURAÇÕES -->
+    <!-- 2. MODAL DE TUTORIAL -->
+    <div id="tutorial-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="tutorial-title">
+      <div class="tutorial-card">
+        <h2 id="tutorial-title">Como Jogar 🎮</h2>
+
+        <div class="tutorial-slides">
+          <!-- Slide 1 -->
+          <div class="tutorial-slide active" data-slide="0">
+            <div class="tutorial-slide-icon">🎯</div>
+            <h3>Arraste os Personagens!</h3>
+            <p>Cada personagem tem desejos e restrições. Arraste-os do <strong>Banco de Reservas</strong> para os <strong>lugares vazios</strong> no cenário. Ou clique no personagem e depois no lugar!</p>
+            <div class="tutorial-tip">
+              <span>💡</span> Leia as regras de cada personagem na ficha abaixo do tabuleiro!
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="tutorial-slide" data-slide="1">
+            <div class="tutorial-slide-icon">✨</div>
+            <h3>Sistema de Pontos</h3>
+            <p>Colocar um personagem no <strong>lugar certo</strong> dá <strong class="points-gain">+100 pontos</strong>!</p>
+            <p>Colocar no <strong>lugar errado</strong> tira <strong class="points-loss">-50 pontos</strong>.</p>
+            <p>Se os pontos zerarem, você <strong class="points-loss">perde uma vida ❤️</strong>!</p>
+            <div class="tutorial-tip">
+              <span>🔄</span> Mover um personagem de um lugar errado para outro errado NÃO tira pontos extras!
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="tutorial-slide" data-slide="2">
+            <div class="tutorial-slide-icon">🤢</div>
+            <h3>Personagens Fedidos!</h3>
+            <p>Alguns personagens ficam <strong>fedidos</strong> em certas fases (marcados com 🤢💨).</p>
+            <p>Os outros personagens com a regra "evitar fedido" <strong>não podem sentar ao lado</strong> de quem está cheirando mal!</p>
+            <div class="tutorial-tip">
+              <span>👃</span> Preste atenção em quem é fedido — coloque-os estrategicamente!
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="tutorial-slide" data-slide="3">
+            <div class="tutorial-slide-icon">⭐</div>
+            <h3>Personagens Ilustres!</h3>
+            <p>A partir da <strong>Fase 10</strong>, existe 30% de chance de aparecer um personagem <strong>⭐ Ilustre</strong>!</p>
+            <p>Acertar o lugar de um ilustre dá <strong class="points-gain">+1000 pontos</strong>! Mas errar custa <strong class="points-loss">-500 pontos</strong>!</p>
+            <div class="tutorial-tip">
+              <span>🌟</span> Resolva primeiro as regras do ilustre para maximizar seus pontos!
+            </div>
+          </div>
+        </div>
+
+        <div class="tutorial-nav">
+          <button id="btn-tutorial-prev" class="btn-tutorial-nav" disabled>◀ Anterior</button>
+          <div class="tutorial-dots">
+            <span class="tutorial-dot active" data-dot="0"></span>
+            <span class="tutorial-dot" data-dot="1"></span>
+            <span class="tutorial-dot" data-dot="2"></span>
+            <span class="tutorial-dot" data-dot="3"></span>
+          </div>
+          <button id="btn-tutorial-next" class="btn-tutorial-nav">Próximo ▶</button>
+        </div>
+
+        <button id="btn-tutorial-close" class="btn-primary" style="display:none;">Entendi! Vamos Jogar! 🎮</button>
+      </div>
+    </div>
+
+    <!-- 3. MODAL DE CONFIGURAÇÕES -->
     <div id="settings-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-title">
       <div class="settings-card">
         <h2 id="settings-title">Configurações de Áudio</h2>

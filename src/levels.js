@@ -5,9 +5,9 @@ window.LEVELS = [
   // --- FASE 1 ---
   {
     id: 1,
-    titulo: "Fase 01: O Ônibus Escolar",
+    titulo: "Fase 01: A Sala de Aula",
     cenario: "onibus",
-    descricao: "Ajude a turma a se acomodar para a excursão escolar! O lado esquerdo tem assentos azuis da janela (lado do time de futebol da escola), e o lado direito tem assentos amarelos do corredor.",
+    descricao: "Ajude a turma a se acomodar nas carteiras da sala de aula! O lado esquerdo tem carteiras azuis perto da janela, e o lado direito tem carteiras amarelas do corredor.",
     grid: {
       rows: 3,
       cols: 2,
@@ -60,9 +60,9 @@ window.LEVELS = [
   // --- FASE 2 ---
   {
     id: 2,
-    titulo: "Fase 02: O Cinema Cozy",
+    titulo: "Fase 02: O Corredor da Escola",
     cenario: "cinema",
-    descricao: "As luzes vão se apagar! Acomode o grupo no cinema. A fileira superior (Frente) fica bem perto da tela gigante, e a fileira inferior (Fundo) é perfeita para quem quer sossego.",
+    descricao: "Hora do intervalo! Acomode o grupo no corredor da escola. A parte de cima fica perto da entrada, e a parte de baixo é perfeita para quem quer sossego nos armários.",
     grid: {
       rows: 2,
       cols: 4
@@ -397,9 +397,9 @@ window.LEVELS = [
   // --- FASE 6 ---
   {
     id: 6,
-    titulo: "Fase 06: De Volta ao Ônibus",
+    titulo: "Fase 06: De Volta à Sala de Aula",
     cenario: "onibus",
-    descricao: "O ônibus vai partir! Zizi está com um livro volumoso e Munch está de olho na janela.",
+    descricao: "A aula vai começar! Zizi está com um livro volumoso e Munch está de olho na janela.",
     grid: {
       rows: 3,
       cols: 2,
@@ -462,9 +462,9 @@ window.LEVELS = [
   // --- FASE 7 ---
   {
     id: 7,
-    titulo: "Fase 07: Pipoca no Cinema",
+    titulo: "Fase 07: Confusão no Corredor",
     cenario: "cinema",
-    descricao: "Munch trouxe um saco gigante de cebola frita fedida! Ninguém quer sentar perto dele.",
+    descricao: "Munch trouxe um saco gigante de cebola frita fedida! Ninguém quer ficar perto dele no corredor.",
     grid: {
       rows: 2,
       cols: 4
@@ -736,9 +736,9 @@ window.LEVELS = [
   // --- FASE 11 ---
   {
     id: 11,
-    titulo: "Fase 11: Ônibus de Dois Andares",
+    titulo: "Fase 11: Sala de Aula Ampliada",
     cenario: "onibus",
-    descricao: "Um ônibus maior com 4 fileiras! Bebeto quer dormir no fundo e Gloop quer a frente.",
+    descricao: "Uma sala maior com 4 fileiras de carteiras! Bebeto quer dormir no fundo e Gloop quer a frente.",
     grid: {
       rows: 4,
       cols: 2,
@@ -812,9 +812,9 @@ window.LEVELS = [
   // --- FASE 12 ---
   {
     id: 12,
-    titulo: "Fase 12: Estreia Especial",
+    titulo: "Fase 12: Intervalo Especial",
     cenario: "cinema",
-    descricao: "É a noite de estreia do filme Cozy! Temos muitos personagens. Pipoca quer o meio.",
+    descricao: "É hora do grande intervalo! Temos muitos personagens. Pipoca quer o meio do corredor.",
     grid: {
       rows: 2,
       cols: 4
@@ -1102,9 +1102,9 @@ window.LEVELS = [
   // --- FASE 16 ---
   {
     id: 16,
-    titulo: "Fase 16: Cinema com Formato 3x3",
+    titulo: "Fase 16: Corredor com Formato 3x3",
     cenario: "cinema",
-    descricao: "Um cinema quadrado 3x3! Flora quer a frente e Bebeto quer o fundo.",
+    descricao: "Um corredor quadrado 3x3! Flora quer a frente e Bebeto quer o fundo.",
     grid: {
       rows: 3,
       cols: 3
@@ -1378,9 +1378,9 @@ window.LEVELS = [
   // --- FASE 20: O DESAFIO SUPREMO GERAL ---
   {
     id: 20,
-    titulo: "Fase 20: A Grande Sessão de Gala Cozy",
+    titulo: "Fase 20: A Grande Reunião no Corredor",
     cenario: "cinema",
-    descricao: "O Grande Encontro Geral no Cinema! 12 lugares, 8 personagens! Munch e Bebeto estão fedidos após um lanche pesado. Resolva o enigma final e zere o jogo!",
+    descricao: "O Grande Encontro Geral no Corredor da Escola! 12 lugares, 8 personagens! Munch e Bebeto estão fedidos após um lanche pesado. Resolva o enigma final e zere o jogo!",
     grid: {
       rows: 3,
       cols: 4
