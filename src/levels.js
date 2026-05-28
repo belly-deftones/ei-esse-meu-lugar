@@ -14,12 +14,12 @@ window.LEVELS = [
       corridorAfterCol: 0
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "Janela Azul (Frente)" },
-      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Frente)" },
-      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "Janela Azul (Meio)" },
-      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Meio)" },
-      { id: "s20", row: 2, col: 0, classe: "assento-transparente", label: "Janela Azul (Fundo)" },
-      { id: "s21", row: 2, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Fundo)" }
+      { id: "s00", row: 0, col: 0, classe: "azul-janela", label: "Janela Azul (Frente)" },
+      { id: "s01", row: 0, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Frente)" },
+      { id: "s10", row: 1, col: 0, classe: "azul-janela", label: "Janela Azul (Meio)" },
+      { id: "s11", row: 1, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Meio)" },
+      { id: "s20", row: 2, col: 0, classe: "azul-janela", label: "Janela Azul (Fundo)" },
+      { id: "s21", row: 2, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Fundo)" }
     ],
     personagens: [
       {
@@ -95,7 +95,7 @@ window.LEVELS = [
         genero: "Bichinho",
         avatar: "gatinho_cinza",
         regras: [
-          { tipo: "linha", alvo: 0, texto: "Quero ver a tela de perto (fileira da frente)!" }
+          { tipo: "linha", alvo: 0, texto: "Quero ficar na fileira da frente perto da entrada!" }
         ]
       },
       {
@@ -115,7 +115,7 @@ window.LEVELS = [
         genero: "Adulto",
         avatar: "bebeto",
         regras: [
-          { tipo: "ponta", texto: "Quero sentar em uma das pontas do cinema." }
+          { tipo: "ponta", texto: "Quero sentar em uma das pontas do corredor." }
         ]
       },
       {
@@ -406,12 +406,12 @@ window.LEVELS = [
       corridorAfterCol: 0
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "Janela Azul (Sup)" },
-      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Sup)" },
-      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "Janela Azul (Meio)" },
-      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Meio)" },
-      { id: "s20", row: 2, col: 0, classe: "assento-transparente", label: "Janela Azul (Inf)" },
-      { id: "s21", row: 2, col: 1, classe: "assento-transparente", label: "Corredor Amarelo (Inf)" }
+      { id: "s00", row: 0, col: 0, classe: "azul-janela", label: "Janela Azul (Sup)" },
+      { id: "s01", row: 0, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Sup)" },
+      { id: "s10", row: 1, col: 0, classe: "azul-janela", label: "Janela Azul (Meio)" },
+      { id: "s11", row: 1, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Meio)" },
+      { id: "s20", row: 2, col: 0, classe: "azul-janela", label: "Janela Azul (Inf)" },
+      { id: "s21", row: 2, col: 1, classe: "amarela-corredor", label: "Corredor Amarelo (Inf)" }
     ],
     personagens: [
       {
@@ -509,7 +509,7 @@ window.LEVELS = [
         genero: "Jovem",
         avatar: "zizi",
         regras: [
-          { tipo: "evitar_fedido", texto: "Quero assistir o documentário sem cheiros ruins." },
+          { tipo: "evitar_fedido", texto: "Quero ler meu livro sem cheiros ruins por perto." },
           { tipo: "meio", texto: "Prefiro os assentos centrais." }
         ]
       },
@@ -745,14 +745,14 @@ window.LEVELS = [
       corridorAfterCol: 0
     },
     assentos: [
-      { id: "s00", row: 0, col: 0, classe: "assento-transparente", label: "F1-E" },
-      { id: "s01", row: 0, col: 1, classe: "assento-transparente", label: "F1-D" },
-      { id: "s10", row: 1, col: 0, classe: "assento-transparente", label: "F2-E" },
-      { id: "s11", row: 1, col: 1, classe: "assento-transparente", label: "F2-D" },
-      { id: "s20", row: 2, col: 0, classe: "assento-transparente", label: "F3-E" },
-      { id: "s21", row: 2, col: 1, classe: "assento-transparente", label: "F3-D" },
-      { id: "s30", row: 3, col: 0, classe: "assento-transparente", label: "F4-E" },
-      { id: "s31", row: 3, col: 1, classe: "assento-transparente", label: "F4-D" }
+      { id: "s00", row: 0, col: 0, classe: "azul-janela", label: "F1-E" },
+      { id: "s01", row: 0, col: 1, classe: "amarela-corredor", label: "F1-D" },
+      { id: "s10", row: 1, col: 0, classe: "azul-janela", label: "F2-E" },
+      { id: "s11", row: 1, col: 1, classe: "amarela-corredor", label: "F2-D" },
+      { id: "s20", row: 2, col: 0, classe: "azul-janela", label: "F3-E" },
+      { id: "s21", row: 2, col: 1, classe: "amarela-corredor", label: "F3-D" },
+      { id: "s30", row: 3, col: 0, classe: "azul-janela", label: "F4-E" },
+      { id: "s31", row: 3, col: 1, classe: "amarela-corredor", label: "F4-D" }
     ],
     personagens: [
       {
@@ -837,7 +837,7 @@ window.LEVELS = [
         genero: "Bichinho",
         avatar: "gatinho_cinza",
         regras: [
-          { tipo: "meio", texto: "Quero poltronas do meio." }
+          { tipo: "meio", texto: "Quero os assentos do meio." }
         ]
       },
       {
@@ -1128,7 +1128,7 @@ window.LEVELS = [
         genero: "Criança",
         avatar: "personagem_moranguinho",
         regras: [
-          { tipo: "linha", alvo: 0, texto: "Quero assistir na primeira fileira." }
+          { tipo: "linha", alvo: 0, texto: "Quero sentar na primeira fileira." }
         ]
       },
       {
@@ -1148,7 +1148,7 @@ window.LEVELS = [
         genero: "Adulto",
         avatar: "gloop",
         regras: [
-          { tipo: "posicao_especifica", alvo: { row: 1, col: 1 }, texto: "Quero sentar na poltrona do centro absoluto." }
+          { tipo: "posicao_especifica", alvo: { row: 1, col: 1 }, texto: "Quero sentar no assento do centro absoluto." }
         ]
       },
       {
@@ -1408,7 +1408,7 @@ window.LEVELS = [
         avatar: "munch",
         fedido: true,
         regras: [
-          { tipo: "linha", alvo: 0, texto: "Quero assistir bem da frente." },
+          { tipo: "linha", alvo: 0, texto: "Quero sentar bem na frente." },
           { tipo: "posicao_especifica", alvo: { row: 0, col: 0 }, texto: "Quero sentar especificamente no canto esquerdo da frente." }
         ]
       },
@@ -1430,7 +1430,7 @@ window.LEVELS = [
         genero: "Jovem",
         avatar: "zizi",
         regras: [
-          { tipo: "evitar_fedido", texto: "Detesto cheiros desagradáveis durante o filme!" },
+          { tipo: "evitar_fedido", texto: "Detesto cheiros desagradáveis no corredor!" },
           { tipo: "linha", alvo: 1, texto: "Quero sentar na fileira do meio." }
         ]
       },
